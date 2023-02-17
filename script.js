@@ -30,6 +30,7 @@ function render() {
     let removeBtn = document.createElement("button");
     removeBtn.textContent = "Remove";
     removeBtn.setAttribute("onclick", `removeBook(${i})`);
+    removeBtn.classList.add("buttons");
     bookDiv.appendChild(removeBtn);
   }
 }
