@@ -9,9 +9,34 @@ function Book(title, author, pages, read) {
 
 function render() {
   let library = document.querySelector("#library");
+  library.textContent = "";
   for (i = 0; i < myLibrary.length; i++) {
-    console.log(myLibrary[i]);
+    let book = myLibrary[i];
+    let bookDiv = document.createElement("div");
+    bookDiv.classList.toggle("book-card");
+    library.appendChild(bookDiv);
+    let bookTitle = document.createElement("h2");
+    bookTitle.textContent = `${book.title}`;
+    bookDiv.appendChild(bookTitle);
+    let bookAuthor = document.createElement("p");
+    bookAuthor.textContent = `${book.author}`;
+    bookDiv.appendChild(bookAuthor);
+    let bookPages = document.createElement("p");
+    bookPages.textContent = `${book.pages}`;
+    bookDiv.appendChild(bookPages);
+    let bookRead = document.createElement("p");
+    bookRead.textContent = `${book.read ? "Read" : "Not Read Yet"}`;
+    bookDiv.appendChild(bookRead);
+    let removeBtn = document.createElement("button");
+    removeBtn.textContent = "Remove";
+    removeBtn.setAttribute("onclick", `removeBook(${i})`);
+    bookDiv.appendChild(removeBtn);
   }
+}
+
+function removeBook(index) {
+  myLibrary.splice(index, 1);
+  render();
 }
 
 function addBookToLibrary() {
