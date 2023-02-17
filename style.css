@@ -1,10 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap");
+
+* {
+  font-family: "roboto", Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #060047;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  color: white;
+  border: 1px solid white;
+  padding: 10px;
+}
+
 #new-book-btn {
   display: block;
   margin: 0 auto;
-  padding: 10px 25px;
+  padding: 15px 30px;
   border-radius: 10px;
   border: 0;
-  background-color: rgb(216, 216, 216);
+  background-color: #e90064;
+  color: white;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+#new-book-btn:hover {
+  background-color: #ff5f9e;
 }
 
 #new-book-form {
@@ -14,7 +39,59 @@
   margin: 20px auto;
   padding: 10px;
   width: 300px;
-  height: 200px;
+  height: 300px;
   border: 1px solid black;
   border-radius: 10px;
+  color: white;
+  background-color: #e90064;
+}
+
+#library {
+  display: flex;
+  flex-wrap: wrap;
+  width: 98vw;
+  height: 30vh;
+  justify-content: space-evenly;
+}
+
+.book-card {
+  border: 1px solid black;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 30%;
+  height: 100%;
+  color: white;
+  background-color: #e90064;
+  border-radius: 10px;
+}
+
+.buttons {
+  padding: 10px 30px;
+  margin: 5px;
+  background-color: #060047;
+  border: 1px solid #060047;
+  color: white;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.buttons:hover {
+  background: none;
+  border: 1px solid #060047;
+  color: #060047;
+}
+
+.input {
+  width: 250px;
+  height: 30px;
+  /* border: 1px solid white; */
+  border: 0;
+  background-color: #06004777;
+  color: white;
+  border-radius: 10px;
+  padding: 0 10px;
 }
